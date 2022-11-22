@@ -2,9 +2,14 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'my-add';
+  title = 'My First Angular App!';
+  imageUrl: string = "https://www.w3schools.com/html/pic_mountain.jpg";
+  isValid: boolean = false;
+
+  onClickMe($event: any){
+    console.log("Clicked", $event);
+  }
 }
