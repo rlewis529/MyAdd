@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-rating',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./rating.component.css']
 })
 export class RatingComponent {
-  rating: number = 0;
+  @Input() rating: number = 0;
 
   onClick(ratingValue: number){
     this.rating = ratingValue
