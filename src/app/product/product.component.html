@@ -6,12 +6,18 @@
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">{{data.productName}}</h5>
-          <app-rating 
-            [rating]="data.rating"
-            [numOfReviews]="data.numOfReviews">
+          <app-rating >
+            <div [ngSwitch]="data.rating">
+              <div *ngSwitchCase="1">Poor</div>
+              <div *ngSwitchCase="2">Fair</div>
+              <div *ngSwitchCase="3">Good</div>
+              <div *ngSwitchCase="4">Very Good</div>
+              <div *ngSwitchCase="5">Excellent</div>
+              <div *ngSwitchDefault>Not Rated</div>
+            </div>
           </app-rating>
-          <p class="card-text">{{data.description}}</p>
-          <p class="card-text"><small class="text-muted">{{data.releasedDate}}</small></p>
+          <p class="card-text">{{data.description | truncate: 10}}</p>
+          <p class="card-text"><small class="text-muted">{{data.releasedDate | date | uppercase }}</small></p>
         </div>
       </div>
     </div>

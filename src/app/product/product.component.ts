@@ -14,7 +14,7 @@ export class ProductComponent  {
 @Input() data: Product = {
   imageUrl: '',
   productName: '',
-  releasedDate: new Date(2022, 12, 1),
+  releasedDate: new Date(1900, 0, 1),
   rating: 0, 
   numOfReviews: 0,
   description: '',
